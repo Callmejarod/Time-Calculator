@@ -1,6 +1,8 @@
 #Time Calculator
 
-def add_time(start, duration, day=0):
+def add_time(start, duration, day=''):
+
+    days_of_the_week = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
 
     start_list = start.split(":")
@@ -17,6 +19,10 @@ def add_time(start, duration, day=0):
     new_hour = int(start_list[0]) + int(duration_list[0])
     new_minutes = int(start_list[1]) + int(duration_list[1]) 
     new_pm_am = str(start_list[2])
+
+
+
+    
  
   
     if new_hour >= 12:
