@@ -29,15 +29,16 @@ def add_time(start, duration, day=''):
             new_pm_am = 'PM'
             print(new_pm_am)
 
-    if new_hour > 12:
-        new_hour -= 12
 
     if new_minutes > 59:
         new_hour += 1
         new_minutes -= 60
+
+    if new_hour > 12:
+        new_hour %= 12
     
     if new_minutes < 10:
-            new_minutes = str(new_minutes).rjust(2, "0")
+        new_minutes = str(new_minutes).rjust(2, "0")
 
 
 
@@ -65,7 +66,7 @@ def add_time(start, duration, day=''):
 
     return new_time
 
-print(add_time('11:43 PM', '3:00', 'tueSday'))
+print(add_time('11:43 PM', '1:17', 'tueSday'))
 
 
 #FIX: Changes throughout the days of the week 
